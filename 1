@@ -1,2 +1,8 @@
-SELECT name FROM sys.databases WHERE HAS_DBACCESS(name) = 1;
+SELECT IS_SRVROLEMEMBER('sysadmin') AS is_sysadmin;
+GO
+
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXEC sp_configure 'xp_cmdshell', 1;
+RECONFIGURE;
 GO
